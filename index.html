@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <canvas class="ghoul-bg" id="ghoulBg" aria-hidden="true"></canvas>
     <main class="shell">
       <section class="hero" aria-label="DLL Upload Vault">
         <div class="hero__shade"></div>
@@ -32,8 +31,8 @@
           </div>
           <img
             class="discord-card__image"
-            src="assets/discord-profile.png"
-            alt="Discord Profil von Ken Kaneki"
+            src="assets/kaneki-hero.gif"
+            alt="Animierter Ken Kaneki Hintergrund"
           />
           <div class="discord-card__details">
             <strong>brg_ken_kaneki</strong>
@@ -53,107 +52,20 @@
             </div>
             <div class="file-mark">DLL</div>
           </div>
-          <p class="public-dll-card__title">Noch keine DLL-Datei online</p>
+          <p class="public-dll-card__title">Public DLL</p>
           <p class="public-dll-card__note">
-            Gib mir die DLL-Datei und den Text dazu, dann fuege ich hier den
-            echten Download ein. Alles in diesem Bereich ist fuer andere
-            Besucher sichtbar.
+            Hier sehen Besucher die oeffentliche DLL und die Info dazu. Sie
+            koennen nichts hochladen oder hinzufuegen.
           </p>
           <div class="public-dll-card__info">
-            <span>Status: wartet auf Datei</span>
-            <span>Info: sichtbar fuer alle</span>
+            <span>Status: keine Datei online</span>
+            <span>Zugriff: nur ansehen</span>
           </div>
           <button class="button button--small button--ghost" type="button" disabled>
-            Download folgt
+            Keine DLL online
           </button>
         </article>
       </section>
-
-      <section class="workspace" aria-label="Upload Bereich">
-        <form class="upload-panel" id="uploadForm">
-          <div class="panel-head">
-            <div>
-              <p class="eyebrow">neuer eintrag</p>
-              <h2>DLL hochladen</h2>
-            </div>
-            <span class="status-pill" id="storageStatus">Bereit</span>
-          </div>
-
-          <label class="drop-zone" id="dropZone">
-            <input id="dllFile" name="dllFile" type="file" accept=".dll" />
-            <span class="drop-zone__mark">+</span>
-            <span class="drop-zone__title">DLL hier ablegen oder auswaehlen</span>
-            <span class="drop-zone__hint" id="fileHint">Nur Dateien mit .dll werden angenommen.</span>
-          </label>
-
-          <label class="field">
-            <span>Titel</span>
-            <input id="titleInput" type="text" maxlength="80" placeholder="z.B. injector-helper.dll" />
-          </label>
-
-          <label class="field">
-            <span>Beschreibung</span>
-            <textarea
-              id="noteInput"
-              rows="5"
-              maxlength="600"
-              placeholder="Schreib dazu, wofuer die DLL ist, Version, Quelle oder was du dir merken willst."
-            ></textarea>
-          </label>
-
-          <div class="actions">
-            <button class="button button--ghost" type="reset">Zuruecksetzen</button>
-            <button class="button button--primary" type="submit">Speichern</button>
-          </div>
-        </form>
-
-        <aside class="library-panel" aria-label="Gespeicherte DLLs">
-          <div class="panel-head">
-            <div>
-              <p class="eyebrow">archiv</p>
-              <h2>Gespeichert</h2>
-            </div>
-            <div class="counter" id="entryCount">0</div>
-          </div>
-
-          <div class="stats">
-            <div>
-              <span id="totalSize">0 KB</span>
-              <small>gesamt</small>
-            </div>
-            <div>
-              <span id="lastUpload">-</span>
-              <small>letzter upload</small>
-            </div>
-          </div>
-
-          <div class="search-row">
-            <input id="searchInput" type="search" placeholder="Suche nach Name oder Notiz" />
-            <button class="icon-button" id="clearSearch" type="button" aria-label="Suche leeren">x</button>
-          </div>
-
-          <div class="entry-list" id="entryList" aria-live="polite"></div>
-        </aside>
-      </section>
     </main>
-
-    <template id="entryTemplate">
-      <article class="entry">
-        <div class="entry__top">
-          <div class="file-mark">DLL</div>
-          <div class="entry__meta">
-            <h3></h3>
-            <p class="entry__sub"></p>
-          </div>
-        </div>
-        <p class="entry__note"></p>
-        <div class="entry__actions">
-          <button class="button button--small button--ghost" data-action="download" type="button">Download</button>
-          <button class="button button--small button--danger" data-action="delete" type="button">Loeschen</button>
-        </div>
-      </article>
-    </template>
-
-    <script src="script.js"></script>
   </body>
 </html>
