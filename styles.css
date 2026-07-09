@@ -169,8 +169,17 @@ h1 {
   margin-top: 18px;
 }
 
+.public-strip {
+  display: grid;
+  grid-template-columns: minmax(300px, 0.92fr) minmax(360px, 1.08fr);
+  gap: 18px;
+  margin-top: 18px;
+}
+
 .upload-panel,
-.library-panel {
+.library-panel,
+.discord-card,
+.public-dll-card {
   border: 1px solid var(--line);
   border-radius: var(--radius);
   background: var(--panel);
@@ -185,6 +194,93 @@ h1 {
 .library-panel {
   min-height: 560px;
   padding: clamp(18px, 3vw, 24px);
+}
+
+.discord-card,
+.public-dll-card {
+  overflow: hidden;
+  padding: clamp(18px, 3vw, 24px);
+}
+
+.discord-card__image {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  object-position: center top;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: var(--radius);
+  background: rgba(0, 0, 0, 0.28);
+}
+
+.discord-card__details {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin: 14px 0 10px;
+}
+
+.discord-card__details strong {
+  overflow-wrap: anywhere;
+  font-size: 1.08rem;
+}
+
+.discord-card__details span {
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 999px;
+  padding: 4px 8px;
+  color: var(--muted);
+  background: rgba(255, 255, 255, 0.05);
+  font-size: 0.78rem;
+  font-weight: 800;
+}
+
+.discord-card p,
+.public-dll-card__note {
+  margin-bottom: 0;
+  color: var(--muted);
+  line-height: 1.55;
+}
+
+.public-dll-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.public-dll-card__title {
+  margin-bottom: 10px;
+  font-size: clamp(1.45rem, 3.2vw, 2.4rem);
+  font-weight: 950;
+  line-height: 1;
+}
+
+.public-dll-card__info {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin: 18px 0;
+}
+
+.public-dll-card__info span {
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 12px;
+  color: var(--muted);
+  background: rgba(255, 255, 255, 0.04);
+  font-size: 0.86rem;
+  font-weight: 800;
+}
+
+.public-dll-card .button {
+  align-self: flex-start;
+  margin-top: auto;
+}
+
+.public-dll-card .button:disabled {
+  cursor: not-allowed;
+  opacity: 0.55;
+  transform: none;
 }
 
 .panel-head {
@@ -471,6 +567,7 @@ h1 {
 }
 
 @media (max-width: 860px) {
+  .public-strip,
   .workspace {
     grid-template-columns: 1fr;
   }
@@ -503,7 +600,8 @@ h1 {
   }
 
   .panel-head,
-  .stats {
+  .stats,
+  .public-dll-card__info {
     grid-template-columns: 1fr;
   }
 
