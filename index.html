@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Kaneki DLL Vault</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <canvas class="ghoul-bg" id="ghoulBg" aria-hidden="true"></canvas>
+    <main class="shell">
+      <section class="hero" aria-label="DLL Upload Vault">
+        <div class="hero__shade"></div>
+        <div class="hero__content">
+          <p class="eyebrow">private dll sammlung</p>
+          <h1>Kaneki Vault</h1>
+          <p class="intro">
+            Lade eine DLL hoch, schreibe deine Notiz dazu und speichere alles
+            lokal in diesem Browser.
+          </p>
+        </div>
+      </section>
+
+      <section class="workspace" aria-label="Upload Bereich">
+        <form class="upload-panel" id="uploadForm">
+          <div class="panel-head">
+            <div>
+              <p class="eyebrow">neuer eintrag</p>
+              <h2>DLL hochladen</h2>
+            </div>
+            <span class="status-pill" id="storageStatus">Bereit</span>
+          </div>
+
+          <label class="drop-zone" id="dropZone">
+            <input id="dllFile" name="dllFile" type="file" accept=".dll" />
+            <span class="drop-zone__mark">+</span>
+            <span class="drop-zone__title">DLL hier ablegen oder auswaehlen</span>
+            <span class="drop-zone__hint" id="fileHint">Nur Dateien mit .dll werden angenommen.</span>
+          </label>
+
+          <label class="field">
+            <span>Titel</span>
+            <input id="titleInput" type="text" maxlength="80" placeholder="z.B. injector-helper.dll" />
+          </label>
+
+          <label class="field">
+            <span>Beschreibung</span>
+            <textarea
+              id="noteInput"
+              rows="5"
+              maxlength="600"
+              placeholder="Schreib dazu, wofuer die DLL ist, Version, Quelle oder was du dir merken willst."
+            ></textarea>
+          </label>
+
+          <div class="actions">
+            <button class="button button--ghost" type="reset">Zuruecksetzen</button>
+            <button class="button button--primary" type="submit">Speichern</button>
+          </div>
+        </form>
+
+        <aside class="library-panel" aria-label="Gespeicherte DLLs">
+          <div class="panel-head">
+            <div>
+              <p class="eyebrow">archiv</p>
+              <h2>Gespeichert</h2>
+            </div>
+            <div class="counter" id="entryCount">0</div>
+          </div>
+
+          <div class="stats">
+            <div>
+              <span id="totalSize">0 KB</span>
+              <small>gesamt</small>
+            </div>
+            <div>
+              <span id="lastUpload">-</span>
+              <small>letzter upload</small>
+            </div>
+          </div>
+
+          <div class="search-row">
+            <input id="searchInput" type="search" placeholder="Suche nach Name oder Notiz" />
+            <button class="icon-button" id="clearSearch" type="button" aria-label="Suche leeren">x</button>
+          </div>
+
+          <div class="entry-list" id="entryList" aria-live="polite"></div>
+        </aside>
+      </section>
+    </main>
+
+    <template id="entryTemplate">
+      <article class="entry">
+        <div class="entry__top">
+          <div class="file-mark">DLL</div>
+          <div class="entry__meta">
+            <h3></h3>
+            <p class="entry__sub"></p>
+          </div>
+        </div>
+        <p class="entry__note"></p>
+        <div class="entry__actions">
+          <button class="button button--small button--ghost" data-action="download" type="button">Download</button>
+          <button class="button button--small button--danger" data-action="delete" type="button">Loeschen</button>
+        </div>
+      </article>
+    </template>
+
+    <script src="script.js"></script>
+  </body>
+</html>
