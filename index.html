@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="de">
+<html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -11,36 +11,36 @@
       <section class="hero" aria-label="DLL Upload Vault">
         <div class="hero__shade"></div>
         <div class="hero__content">
-          <p class="eyebrow">private dll sammlung</p>
+          <p class="eyebrow">private dll vault</p>
           <h1>Ken Vault</h1>
           <p class="intro">
-            Besucher sehen mein Discord-Profil und die oeffentliche DLL mit
-            Beschreibung. Dein lokales Archiv bleibt nur fuer dich.
+            Visitors can see my Discord profile and the public DLL section with
+            its info. This page is view-only for everyone else.
           </p>
         </div>
       </section>
 
-      <section class="public-strip" aria-label="Oeffentliches Profil und DLL">
+      <section class="public-strip" aria-label="Public profile and DLL">
         <article class="discord-card">
           <div class="panel-head">
             <div>
-              <p class="eyebrow">mein discord</p>
+              <p class="eyebrow">my discord</p>
               <h2>Ken Kaneki</h2>
             </div>
             <span class="status-pill">Online</span>
           </div>
-          <img
-            class="discord-card__image"
-            src="assets/kaneki-hero.gif"
-            alt="Animierter Ken Kaneki Hintergrund"
-          />
+          <div class="discord-card__media" aria-label="Animated profile background">
+            <video autoplay muted loop playsinline>
+              <source src="assets/profile-background.mp4" type="video/mp4" />
+            </video>
+          </div>
           <div class="discord-card__details">
             <strong>brg_ken_kaneki</strong>
             <span>exe</span>
           </div>
           <p>
-            Bevor du jemanden verletzt, sei lieber selber der, der verletzt
-            wird. It's better to be hurt than to hurt others ...
+            Before you hurt someone, be the one who gets hurt instead. It's
+            better to be hurt than to hurt others ...
           </p>
         </article>
 
@@ -48,21 +48,21 @@
           <div class="panel-head">
             <div>
               <p class="eyebrow">public dll</p>
-              <h2>DLL fuer Besucher</h2>
+              <h2>DLL for visitors</h2>
             </div>
             <div class="file-mark">DLL</div>
           </div>
           <p class="public-dll-card__title">Public DLL</p>
           <p class="public-dll-card__note">
-            Hier sehen Besucher die oeffentliche DLL und die Info dazu. Sie
-            koennen nichts hochladen oder hinzufuegen.
+            Visitors can only see the public DLL and its information here. They
+            cannot upload, edit, or add anything.
           </p>
           <div class="public-dll-card__info">
-            <span>Status: keine Datei online</span>
-            <span>Zugriff: nur ansehen</span>
+            <span>Status: no file online</span>
+            <span>Access: view only</span>
           </div>
           <button class="button button--small button--ghost" type="button" disabled>
-            Keine DLL online
+            No DLL online
           </button>
         </article>
       </section>

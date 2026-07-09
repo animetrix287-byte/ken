@@ -202,15 +202,32 @@ h1 {
   padding: clamp(18px, 3vw, 24px);
 }
 
-.discord-card__image {
-  display: block;
+.discord-card__media {
+  position: relative;
+  overflow: hidden;
   width: 100%;
   aspect-ratio: 16 / 9;
-  object-fit: cover;
-  object-position: center top;
   border: 1px solid rgba(255, 255, 255, 0.14);
   border-radius: var(--radius);
   background: rgba(0, 0, 0, 0.28);
+}
+
+.discord-card__media::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(180deg, transparent 42%, rgba(0, 0, 0, 0.54)),
+    radial-gradient(circle at 82% 20%, rgba(224, 23, 53, 0.2), transparent 15rem);
+}
+
+.discord-card__media video {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
 }
 
 .discord-card__details {
