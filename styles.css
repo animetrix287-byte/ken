@@ -253,6 +253,53 @@ h1 {
   font-weight: 800;
 }
 
+.discord-invite {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 12px;
+  align-items: center;
+  margin: 0 0 14px;
+  border: 1px solid rgba(224, 23, 53, 0.42);
+  border-radius: var(--radius);
+  padding: 10px;
+  color: var(--text);
+  background:
+    linear-gradient(90deg, rgba(224, 23, 53, 0.16), rgba(255, 255, 255, 0.04)),
+    rgba(0, 0, 0, 0.24);
+  text-decoration: none;
+  transition:
+    transform 140ms ease,
+    border-color 140ms ease,
+    background 140ms ease;
+}
+
+.discord-invite:hover {
+  border-color: rgba(224, 23, 53, 0.82);
+  background:
+    linear-gradient(90deg, rgba(224, 23, 53, 0.24), rgba(255, 255, 255, 0.06)),
+    rgba(0, 0, 0, 0.32);
+  transform: translateY(-1px);
+}
+
+.discord-invite img {
+  display: block;
+  width: 100%;
+  max-height: 36px;
+  object-fit: contain;
+  object-position: left center;
+}
+
+.discord-invite span {
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 999px;
+  padding: 8px 10px;
+  color: var(--white);
+  background: rgba(0, 0, 0, 0.32);
+  font-size: 0.82rem;
+  font-weight: 900;
+  white-space: nowrap;
+}
+
 .discord-card p,
 .public-dll-card__note {
   margin-bottom: 0;
